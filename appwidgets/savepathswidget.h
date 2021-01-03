@@ -6,11 +6,9 @@
 class SavePathsWidget : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit SavePathsWidget(QWidget *parent = nullptr);
-
-signals:
-
 };
 
 #endif // SAVEPATHSWIDGET_H
