@@ -9,9 +9,6 @@ class FiltersWidget : public QWidget
 
 public:
     explicit FiltersWidget(QWidget *parent = nullptr);
-
-signals:
-
 };
 
 #endif // FILTERSWIDGET_H

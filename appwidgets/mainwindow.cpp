@@ -30,13 +30,13 @@ MainWindow::MainWindow(QWidget *parent)
     this->centralWidget()->layout()->addWidget(new HeaderWidget);
 
     auto tabbedWidget = new QTabWidget;
-    tabbedWidget->addTab(new FilesView, tr("central_widget.tab.files"));
-    tabbedWidget->addTab(new FiltersWidget, tr("central_widget.tab.filters"));
-    tabbedWidget->addTab(new SavePathsWidget, tr("central_widget.tab.save_paths"));
-    tabbedWidget->addTab(new LocalScanPathsWidget, tr("central_widget.tab.local_scan_paths"));
-    tabbedWidget->addTab(new RemotePullPathsWidget, tr("central_widget.tab.remote_pull_paths"));
-    tabbedWidget->addTab(new UsersWidget, tr("central_widget.tab.users"));
-    tabbedWidget->addTab(new OptionsWidget, tr("central_widget.tab.options"));
+    tabbedWidget->addTab(new FilesView, tr("tabs.files"));
+    tabbedWidget->addTab(new FiltersWidget, tr("tabs.filters"));
+    tabbedWidget->addTab(new SavePathsWidget, tr("tabs.save_paths"));
+    tabbedWidget->addTab(new LocalScanPathsWidget, tr("tabs.local_scan_paths"));
+    tabbedWidget->addTab(new RemotePullPathsWidget, tr("tabs.remote_pull_paths"));
+    tabbedWidget->addTab(new UsersWidget, tr("tabs.users"));
+    tabbedWidget->addTab(new OptionsWidget, tr("tabs.options"));
     this->centralWidget()->layout()->addWidget(tabbedWidget);
 
     this->setMenuBar(new QMenuBar);
@@ -46,11 +46,11 @@ MainWindow::MainWindow(QWidget *parent)
     auto helpMenu = this->menuBar()->addMenu(tr("menu_bar.help"));
     auto aboutAct = helpMenu->addAction(tr("menu_bar.help.about"));
     connect(aboutAct, &QAction::triggered, [this](){
-        QMessageBox::about(this, tr("about_window_title"), tr("about_window_text"));
+        QMessageBox::about(this, tr("menu_bar.help.about"), tr("menu_bar.help.about_text"));
     });
     auto aboutQtAct = helpMenu->addAction(tr("menu_bar.help.aboutqt"));
     connect(aboutQtAct, &QAction::triggered, [this](){
-        QMessageBox::aboutQt(this, tr("about_qt_window_title"));
+        QMessageBox::aboutQt(this, tr("menu_bar.help.aboutqt"));
     });
 
     this->setStatusBar(new QStatusBar);

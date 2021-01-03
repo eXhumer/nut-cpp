@@ -15,7 +15,7 @@ public:
 private:
     QPushButton *scanBtn, *organizeBtn, *pullBtn,
         *updateTitleDbBtn, *decompressNszBtn,
-        *compressNszBtn, *grantGoogleAuthBtn;
+        *compressNspBtn, *grantGoogleAuthBtn;
 
     QLabel *serverInfo, *usbStatus;
 };
