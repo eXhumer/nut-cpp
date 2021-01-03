@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto tabbedWidget = new QTabWidget;
     tabbedWidget->addTab(new FilesView, tr("tabs.files"));
-    tabbedWidget->addTab(new FiltersWidget, tr("tabs.filters"));
+    tabbedWidget->addTab(new FiltersWidget({{"US", "en"}, {"UK", "en"}, {"UA", "en"}, {"UB", "en"}, {"UZ", "en"}}), tr("tabs.filters"));
     tabbedWidget->addTab(new SavePathsWidget, tr("tabs.save_paths"));
     tabbedWidget->addTab(new LocalScanPathsWidget, tr("tabs.local_scan_paths"));
     tabbedWidget->addTab(new RemotePullPathsWidget, tr("tabs.remote_pull_paths"));
