@@ -1,0 +1,3 @@
+[submodule "translations"]
+	path = resources/translations
+	url = https://github.com/eXhumer/nut-cpp-translations.git

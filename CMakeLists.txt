@@ -1,45 +1,30 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(nut-cpp LANGUAGES CXX)
+project(NUT LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Widgets Network REQUIRED)
+add_subdirectory(appwidgets)
+
+find_package(Qt5LinguistTools)
+
+qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} resources/translations/${CMAKE_PROJECT_NAME}.en_US.ts)
 
 set(PROJECT_SOURCES
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    filesview.cpp
-    filesview.h
-    filterswidget.cpp
-    filterswidget.h
-    savepathswidget.cpp
-    savepathswidget.h
-    localscanpathswidget.cpp
-    localscanpathswidget.h
-    remotepullpathswidget.cpp
-    remotepullpathswidget.h
-    userswidget.cpp
-    userswidget.h
-    optionswidget.cpp
-    optionswidget.h
-    headerwidget.cpp
-    headerwidget.h
-    progresswidget.cpp
-    progresswidget.h
-    images.qrc
+    ${QM_FILES}
 )
+
+find_package(Qt5Core)
+
+set(CMAKE_AUTORCC 1)
 
 add_executable(${CMAKE_PROJECT_NAME}
     ${PROJECT_SOURCES}
+    resources/resources.qrc
 )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Network)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE appwidgets)

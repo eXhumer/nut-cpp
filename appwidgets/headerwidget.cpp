@@ -27,15 +27,17 @@ HeaderWidget::HeaderWidget(QWidget *parent)
     this->grantGoogleAuthBtn = new QPushButton(tr("app.header.grant_gdrive_btn"), this);
     this->grantGoogleAuthBtn->setMaximumWidth(200);
     topLayout->addWidget(this->grantGoogleAuthBtn);
+    topLayout->addStretch();
     auto bottomLayout = new QHBoxLayout;
-    this->serverInfo = new QLabel(tr("PLACEHOLDER"), this);
+    this->serverInfo = new QLabel(tr("PLACEHOLDER_1"), this);
     this->serverInfo->setMinimumWidth(200);
     this->serverInfo->setAlignment(Qt::AlignCenter);
     bottomLayout->addWidget(this->serverInfo);
-    this->usbStatus = new QLabel(tr("PLACEHOLDER"), this);
+    this->usbStatus = new QLabel(tr("PLACEHOLDER_2"), this);
     this->usbStatus->setMinimumWidth(50);
     this->usbStatus->setAlignment(Qt::AlignCenter);
     bottomLayout->addWidget(this->usbStatus);
+    bottomLayout->addStretch();
     static_cast<QVBoxLayout*>(this->layout())->addLayout(topLayout);
     static_cast<QVBoxLayout*>(this->layout())->addLayout(bottomLayout);
 }
